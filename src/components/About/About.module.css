@@ -1,0 +1,160 @@
+@import "../../vars.css";
+
+/* Container Styling */
+.container {
+    position: relative;
+    background-color: rgba(240, 240, 240, 0.9); /* Subtle light background */
+    border-radius: 15px;
+    padding: 50px; /* Adjusted padding */
+    margin-top: 80px; /* Reduced spacing */
+    margin-left: 10%;
+    margin-right: 10%;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+}
+
+/* Title Styling */
+.title {
+    color: var(--color-primary);
+    font-size: 40px; /* Increased size for better emphasis */
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    background: linear-gradient(90deg, #457b9d, #ff6b6b); /* Gradient text effect */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+}
+
+/* Content Layout */
+.content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px; /* Gap between image and text */
+}
+
+/* About Image */
+.aboutImage {
+    width: 40%; /* Slightly larger image */
+    animation: slideInLeft 1.5s ease forwards;
+    opacity: 0;
+}
+
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* About Items */
+.aboutItems {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.aboutItem {
+    position: relative; /* Required for the gradient effect */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px; /* Space between icon and text */
+    border-radius: 20px;
+    padding: 20px;
+    background: linear-gradient(to right, rgba(255, 240, 240, 0.7), rgba(240, 240, 240, 0.9)); /* Fades from pink to light grey */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    overflow: hidden; /* Prevent gradient effect overflow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.aboutItem::before {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border-radius: 25px; /* Matches .aboutItem border radius */
+    background: linear-gradient(to right, rgba(131, 206, 252, 0.3), rgba(69, 123, 157, 0.3)); /* Pink to blue gradient */
+    opacity: 0; /* Initially hidden */
+    background-size: 200% 100%; /* Larger background for movement */
+    z-index: -1; /* Behind the content */
+    transform: scale(1.2); /* Start with a larger size for the animation */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth animation */
+}
+
+.aboutItem:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.aboutItem:hover::before {
+    opacity: 1; /* Make the gradient border visible */
+    transform: scale(1); /* Shrink to fit the item smoothly */
+    animation: gradientMoveOnce 2s ease forwards; /* Play the gradient animation once */
+}
+
+/* Gradient Animation for Border */
+@keyframes gradientMoveOnce {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 0%;
+    }
+}
+
+.aboutItem h3 {
+    font-size: 22px; /* Adjusted size for better hierarchy */
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 5px;
+}
+
+.aboutItem p {
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--color-text-secondary);
+}
+
+.aboutItem img {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px; /* Slightly rounded icons */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Icon shadow for depth */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 830px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .aboutImage {
+        width: 80%; /* Scale down for smaller screens */
+        margin-bottom: 20px;
+    }
+
+    .aboutItems {
+        gap: 30px; /* Adjust spacing for smaller devices */
+    }
+
+    .aboutItem {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px; /* Reduce spacing between elements */
+    }
+
+    .aboutItem img {
+        margin-bottom: 10px;
+    }
+}

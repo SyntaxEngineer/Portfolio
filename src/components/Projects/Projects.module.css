@@ -1,0 +1,51 @@
+/* Container Styling */
+.container {
+    margin: 50px 10%; /* Top and side margins combined */
+    display: flex; /* Flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+    gap: 20px; /* Space between title and projects */
+    padding: 30px;
+    background: linear-gradient(135deg, #e0f7fa, #ffffff); /* Subtle gradient */
+    border-radius: 20px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); /* Slightly deeper shadow for contrast */
+}
+
+/* Projects Section Styling */
+.projects {
+    display: flex; /* Flexbox for horizontal layout */
+    flex-wrap: wrap; /* Allow wrapping to a new line if needed */
+    gap: 20px; /* Space between project cards */
+    justify-content: center; /* Center-align cards */
+}
+
+/* Smooth Scrolling */
+.container {
+    scroll-behavior: smooth; /* Smooth scrolling for better UX */
+}
+
+/* Scrollbar Customization */
+.container::-webkit-scrollbar {
+    height: 10px; /* Slightly larger for usability */
+}
+
+.container::-webkit-scrollbar-thumb {
+    background: #457b9d; /* Thumb color */
+    border-radius: 5px; /* Softer edges */
+}
+
+.container::-webkit-scrollbar-track {
+    background: #e0f7fa; /* Track color */
+}
+
+/* Title Styling */
+.title {
+    font-size: 46px; /* Slightly increased for prominence */
+    font-weight: 700; /* Enhanced font weight */
+    letter-spacing: 2.5px; /* Subtle adjustment for a cleaner look */
+    text-transform: uppercase;
+    text-align: center;
+    background: linear-gradient(90deg, #457b9d, #ff6b6b); /* Gradient text */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Gradient effect */
+    margin-bottom: 25px; /* Increased spacing below title */
+}

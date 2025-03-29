@@ -1,0 +1,98 @@
+.container {
+    background: #ffffff; /* Neutral card background */
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 20px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    flex: 0 0 30%; /* Adjust the width of each card */
+    margin: 10px; /* Add some space between cards */
+}
+
+
+.container:hover {
+    transform: rotateY(5deg) rotateX(5deg); /* 3D tilt effect */
+    /*box-shadow: 0 10px 20px rgba(0, 0, 255, 0.4);*/ /* Shadow with a soft blue glow */
+    box-shadow: 0 10px 20px rgba(188, 102, 222, 0.4);
+}  
+
+
+
+
+.image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #1d3557;
+    margin-bottom: 10px;
+    text-align: center;
+    background: linear-gradient(90deg, #457b9d, #ff6b6b);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.description {
+    font-size: 16px;
+    color: #457b9d; /* Softer text color */
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+}
+
+.skill {
+    background: #a8dadc;
+    color: #1d3557;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 20px; /* Pill-shape */
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.skill:hover {
+    background: #457b9d; /* Hover effect */
+    color: #ffffff;
+    transform: scale(1.1); /* Slight scale-up */
+}
+
+.links {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+
+.link {
+    text-decoration: none;
+    color: #ffffff; /* Initial text color */
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 20px;
+    padding: 8px 15px;
+    background: linear-gradient(135deg, #6a0572, #36d1dc); /* New gradient colors */
+    
+}
+
+.link:hover {
+    
+    transform: scale(1.1);
+    
+    color: #ffffff; /* Maintain text color on hover */
+}
+
+
